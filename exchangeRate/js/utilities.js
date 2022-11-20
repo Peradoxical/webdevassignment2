@@ -9,9 +9,7 @@ function toggleButton(button){
 
 
 async function initializeSelectData(JSONfile){
-    let jsonRequest=new Request(JSONfile);
-    jsonRequest.mode='no-cors';
-    let JSONobject= await fetch(jsonRequest);
+    let JSONobject= await fetch(JSONfile);
     let currencies=JSON.parse(JSONobject);
         for (let i of currencies){
             let addOption=document.createElement("option");
