@@ -1,3 +1,4 @@
+'use strict';
 /**
  * 
  * @param {Node} button 
@@ -8,7 +9,9 @@ function toggleButton(button){
 
 
 async function initializeSelectData(JSONfile){
-    let JSONobject= await fetch(JSONfile);
+    let jsonRequest=new Request(JSONfile);
+    jsonRequest.mode='no-cors';
+    let JSONobject= await fetch(jsonRequest);
     let currencies=JSON.parse(JSONobject);
         for (let i of currencies){
             let addOption=document.createElement("option");

@@ -13,15 +13,15 @@ let urlObject={
 }
 
 function init(){
-    initializeSelectData("./json/currency.json").then(
+    initializeSelectData('./json/currency.json').then(
         function(value){console.log("values loaded successfully")},
         function(error){alert("could not load currencies")}
     );
 }
 
-
-
 function getAbsoluteRequestURL(){
     let absoluteURL=urlObject.mainURL+`?`+urlObject.fromQry+`&`+urlObject.toQry+`&`+urlObject.amountQry;
     return absoluteURL;
 }
+
+document.addEventListener('DOMContentLoaded', init);
